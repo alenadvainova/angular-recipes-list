@@ -1,0 +1,115 @@
+<form
+  #authRegForm="ngForm"
+  (ngSubmit)="onSubmit(authRegForm)"
+  [fieldsMustMatch]="['password', 'confirmPassword']"
+>
+  <div class="form-group">
+    <label for="firstName">First name</label>
+    <input
+      type="text"
+      id="firstName"
+      class="form-control"
+      ngModel
+      name="firstName"
+      required
+      #firstName="ngModel"
+      [ngClass]="{ 'is-invalid': firstName.touched && !firstName.valid }"
+    />
+    <div *ngIf="firstName.touched && !firstName.valid" class="invalid-feedback">
+      <div>First Name is required</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="lastName">Last name</label>
+    <input
+      type="text"
+      id="lastName"
+      class="form-control"
+      ngModel
+      name="lastName"
+      required
+      #lastName="ngModel"
+      [ngClass]="{ 'is-invalid': lastName.touched && !lastName.valid }"
+    />
+    <div *ngIf="lastName.touched && !lastName.valid" class="invalid-feedback">
+      <div>Last Name is required</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="email">E-mail</label>
+    <input
+      type="email"
+      id="email"
+      class="form-control"
+      ngModel
+      name="email"
+      required
+      email
+      #email="ngModel"
+      [ngClass]="{ 'is-invalid': email.touched && !email.valid }"
+    />
+    <div *ngIf="email.touched && !email.valid" class="invalid-feedback">
+      <div>Email is required</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input
+      type="password"
+      id="password"
+      class="form-control"
+      ngModel
+      name="password"
+      required
+      minlength="6"
+      #password="ngModel"
+      [ngClass]="{ 'is-invalid': password.touched && !password.valid }"
+    />
+    <div *ngIf="password.touched && !password.valid" class="invalid-feedback">
+      <div *ngIf="password.errors.required">Password is required</div>
+      <div *ngIf="password.errors.minlength">
+        Password must be at least 6 characters
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="confirmPassword">Confirm password</label>
+    <input
+      type="password"
+      id="confirmPassword"
+      class="form-control"
+      ngModel
+      name="confirmPassword"
+      required
+      #confirmPassword="ngModel"
+      [ngClass]="{
+        'is-invalid': confirmPassword.touched && !confirmPassword.valid
+      }"
+    />
+    <div
+      *ngIf="confirmPassword.touched && !confirmPassword.valid"
+      class="invalid-feedback"
+    >
+      <div *ngIf="confirmPassword.errors.required">
+        Confirm password is required
+      </div>
+      <div *ngIf="confirmPassword.errors.mustMatch">
+        Confirm password must match
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="!authRegForm.valid || isLoading"
+    >
+      <span
+        *ngIf="isLoading"
+        class="spinner-border spinner-border-sm mr-1"
+      ></span>
+      Create account
+    </button>
+    <a routerLink="../login" class="btn btn-link">Cancel</a>
+  </div>
+</form>

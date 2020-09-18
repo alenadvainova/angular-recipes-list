@@ -1,0 +1,70 @@
+<nav
+  class="navbar navbar-expand-sm navbar-light bg-light"
+  style="margin-bottom: 10px"
+>
+  <div class="navbar-header">
+    <a href="#" class="navbar-brand">Recipe Book</a>
+  </div>
+  <div class="container-fluid">
+    <ul class="navbar-nav justify-content-start">
+      <li class="nav-item" *ngIf="isAuth">
+        <a class="nav-link" routerLinkActive="active" routerLink="/recipes"
+          >Recipes</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          routerLinkActive="active"
+          routerLink="/shopping-list"
+          >Shopping List</a
+        >
+      </li>
+    </ul>
+
+    <ul class="navbar-nav justify-content-end" *ngIf="!isAuth">
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="/auth/login"
+          >Sing in</a
+        >
+      </li>
+    </ul>
+    <ul class="navbar-nav" *ngIf="isAuth">
+      <li class="dropdown nav-item" appDropdown>
+        <a
+          id="dropdownMenuLink"
+          style="cursor: pointer"
+          class="dropdown-toggle nav-link"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          >Manage</a
+        >
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <!-- <a
+            style="cursor: pointer"
+            class="dropdown-item"
+            (click)="onSaveRecipes()"
+            >Save Data</a
+          > -->
+          <a
+            style="cursor: pointer"
+            class="dropdown-item"
+            (click)="onGetRecipes()"
+            >Refresh Data</a
+          >
+        </div>
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          style="cursor: pointer"
+          (click)="onLogout()"
+          *ngIf="isAuth"
+          >Sign out</a
+        >
+      </li>
+    </ul>
+  </div>
+</nav>
