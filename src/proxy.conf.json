@@ -1,0 +1,7 @@
+{
+  "/": {
+    "target": "https://recipe-book-68ac0.firebaseio.com",
+    "secure": false,
+    "changeOrigin": true
+  }
+}
