@@ -1,6 +1,6 @@
 {
-  "/": {
-    "target": "https://recipe-book-68ac0.firebaseio.com",
+  "/#": {
+    "target": "http://localhost:4200/",
     "secure": false,
     "changeOrigin": true
   }
