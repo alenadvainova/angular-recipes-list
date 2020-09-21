@@ -1,27 +1,11 @@
-# App
+# Recipes Book App
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.5.
 
-## Development server
+## Description
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Here is [the link](https://alenadvainova.github.io/angular-recipes-list/auth/login?returnUrl=%2Frecipes) to run the application.
 
-## Code scaffolding
+The application allows the user to add new recipe with desciption and list of ingredients to the book or display details of saved recipe or delete it. It is possible to add recipe's ingredients to a shopping list.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Register a new user or sign in to manage recipes. Recipes tab is available only for authenticated user. Shopping List tab is available for all users.
